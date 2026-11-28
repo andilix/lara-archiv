@@ -1,7 +1,8 @@
 <!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex,nofollow"><style>*,*::before,*::after{box-sizing:border-box}body{margin:0;font:14px system-ui,-apple-system,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style><script>
 (function () {
   var kb = null; try { kb = localStorage.getItem('pub-k'); } catch (e) {}
-  if (!kb) { location.replace('index.html' + location.hash); return; }
+  var bd = null; try { bd = localStorage.getItem('pub-b'); } catch (e) {}
+  if (!kb || bd !== '83eeda42e0be56c4') { location.replace('index.html' + location.hash); return; }
   try { localStorage.setItem('spieltag-ro', '1'); } catch (e) {}
   var raw = Uint8Array.from(atob(kb), function (c) { return c.charCodeAt(0); });
   var keyP = crypto.subtle.importKey('raw', raw, 'AES-GCM', false, ['decrypt']);
