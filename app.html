@@ -21,7 +21,8 @@
     return { save: async function (o) { var b = o.data instanceof Blob ? o.data : new Blob([o.data]); var a = document.createElement('a'); a.href = URL.createObjectURL(b); a.download = o.filename; document.body.appendChild(a); a.click(); a.remove(); return { status: 'saved' }; } };
   } };
 })();
-</script></head><body><title>Lara Fußball Archiv</title>
+</script></head><body>
+<title>Lara Fußball Archiv</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -2170,7 +2171,7 @@ input:disabled, select:disabled, textarea:disabled { opacity: 1; color: var(--fg
       '<button data-act="tab" data-v="squad" aria-pressed="' + (view === 'squad' || view === 'kform') + '">Kader</button></nav>';
   }
   function footer() {
-    var t = !dbReady ? 'Stand: 26.11.2026 · Familien-Ansicht' : saveErr ? 'Speichern ist fehlgeschlagen. Bitte später erneut versuchen.' : 'Alle Änderungen werden gespeichert.';
+    var t = !dbReady ? 'Stand: 28.11.2026 · Familien-Ansicht' : saveErr ? 'Speichern ist fehlgeschlagen. Bitte später erneut versuchen.' : 'Alle Änderungen werden gespeichert.';
     return reportsSection() + '<p class="foot">' + t + '</p><p class="foot" id="rep-ok" role="status"></p>' + reportDialog() + '<div class="bk"><div class="eyebrow">Sicherung</div><div class="row"><button class="btn sm" data-act="profile">Profil</button>' + (forcedRO ? '' : '<button class="btn sm" data-act="ro">' + (viewOnly ? 'Bearbeiten aktivieren' : 'Nur ansehen') + '</button>') + '<a class="btn sm" style="text-decoration:none" href="index.html#abmelden">Abmelden</a>' + (viewOnly ? '<button class="btn sm" data-act="repopen">Fehler melden</button>' : '') +
       (dl ? '<button class="btn sm" data-act="bk" data-k="json">Sicherung herunterladen</button><button class="btn sm" data-act="bk" data-k="games">Spiele (CSV)</button><button class="btn sm" data-act="bk" data-k="suc">Erfolge (CSV)</button><button class="btn sm" data-act="bk" data-k="squad">Kader (CSV)</button><button class="btn sm" data-act="bk" data-k="train">Trainings (CSV)</button>' : '') +
       '<button class="btn sm" data-act="rest">Sicherung einlesen</button><button class="btn sm" data-act="imp">Spiele aus Excel importieren</button></div><input type="file" id="restore" accept=".json,application/json" hidden><input type="file" id="imp-file" accept=".xlsx,.xls,.csv,.ods" hidden><p class="foot" id="bk-msg" role="status">Fotos sind nicht in der Sicherung.</p></div>' +
@@ -2954,4 +2955,5 @@ input:disabled, select:disabled, textarea:disabled { opacity: 1; color: var(--fg
   })();
 })();
 </script>
+
 </body></html>
